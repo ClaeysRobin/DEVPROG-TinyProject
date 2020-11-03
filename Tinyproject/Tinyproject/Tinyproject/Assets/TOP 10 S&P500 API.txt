@@ -1,0 +1,79 @@
+Overzicht van de S&P 500 top 10 bedrijven gefliterd op NAME SUMBOL EXCHANGE
+
+API = https://cloud.iexapis.com/stable/stock/market/batch?symbols=aapl,msft,amzn,fb,googl,goog,brk.b,jnj,pg,nvda&types=quote&token=pk_7b3376184a694659bb2a89ee7781d00e&filter=companyName,symbol,primaryExchange
+
+
+
+
+{
+  "AAPL": {
+    "quote": {
+      "companyName": "Apple, Inc.",
+      "symbol": "AAPL",
+      "primaryExchange": "NASDAQ"
+    }
+  },
+  "MSFT": {
+    "quote": {
+      "companyName": "Microsoft Corp.",
+      "symbol": "MSFT",
+      "primaryExchange": "NASDAQ"
+    }
+  },
+  "AMZN": {
+    "quote": {
+      "companyName": "Amazon.com, Inc.",
+      "symbol": "AMZN",
+      "primaryExchange": "NASDAQ"
+    }
+  },
+  "FB": {
+    "quote": {
+      "companyName": "Facebook, Inc.",
+      "symbol": "FB",
+      "primaryExchange": "NASDAQ"
+    }
+  },
+  "GOOGL": {
+    "quote": {
+      "companyName": "Alphabet, Inc.",
+      "symbol": "GOOGL",
+      "primaryExchange": "NASDAQ"
+    }
+  },
+  "GOOG": {
+    "quote": {
+      "companyName": "Alphabet, Inc.",
+      "symbol": "GOOG",
+      "primaryExchange": "NASDAQ"
+    }
+  },
+  "BRK.B": {
+    "quote": {
+      "companyName": "Berkshire Hathaway, Inc.",
+      "symbol": "BRK.B",
+      "primaryExchange": "New York Stock Exchange"
+    }
+  },
+  "JNJ": {
+    "quote": {
+      "companyName": "Johnson & Johnson",
+      "symbol": "JNJ",
+      "primaryExchange": "New York Stock Exchange"
+    }
+  },
+  "PG": {
+    "quote": {
+      "companyName": "Procter & Gamble Co.",
+      "symbol": "PG",
+      "primaryExchange": "New York Stock Exchange"
+    }
+  },
+  "NVDA": {
+    "quote": {
+      "companyName": "NVIDIA Corp.",
+      "symbol": "NVDA",
+      "primaryExchange": "NASDAQ"
+    }
+  }
+}

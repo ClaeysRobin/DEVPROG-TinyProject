@@ -1,0 +1,12 @@
+API = https://cloud.iexapis.com/stable/stock/aapl/quote?token=pk_7b3376184a694659bb2a89ee7781d00e&filter=symbol,companyName,primaryExchange,latestTime,latestPrice,previousClose,isUSMarketOpen
+
+
+{
+    "symbol": "AAPL",
+    "companyName": "Apple, Inc.",
+    "primaryExchange": "NASDAQ",
+    "latestTime": "10:35:31 AM",
+    "latestPrice": 110.63,
+    "previousClose": 108.77,
+    "isUSMarketOpen": true
+}
