@@ -4,6 +4,7 @@ using System.Net.Http;
 using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Threading.Tasks;
+using Ex01.Models;
 using Newtonsoft.Json;
 using Tinyproject.Models;
 
@@ -13,6 +14,11 @@ namespace Tinyproject.Repositories
     {
         private const string _APIKEY = "pk_7b3376184a694659bb2a89ee7781d00e";
         private const string _BASEURL = " https://cloud.iexapis.com/stable/stock";
+
+        // trello 
+        private const string _TRELLOAPIKEY = "da34b98e6298f9b0bd478f0e748710c7";
+        private const string _TRELLOUSERTOKEN = "b13ae0159738318c933c031516ad5bb3a6e94d5d302ed6f5eb0ba35da4b67f6d";
+        private const string _TRELLOBASEURL = "https://api.trello.com/1";
 
         private static HttpClient GetHttpClient()
         {
@@ -89,6 +95,60 @@ namespace Tinyproject.Repositories
                     throw ex; //altijd breakpoint bij een catch --> xamarin stopt niet altijd bij een fout melding
                 }
                 return new List<CompanyInfo>();
+            }
+        }
+
+        public static async Task<List<TrelloBoard>> GetTrelloBoardsAsync()
+        {
+            string url = $"{_TRELLOBASEURL}/members/me/boards?key={_TRELLOAPIKEY}&token={_TRELLOUSERTOKEN}";
+            using (HttpClient client = GetHttpClient())
+            {
+                try
+                {
+                    string json = await client.GetStringAsync(url);
+                    List<TrelloBoard> list = JsonConvert.DeserializeObject<List<TrelloBoard>>(json);
+                    return list;
+                }
+                catch (Exception ex)
+                {
+                    throw ex; //altijd breakpoint bij een catch --> xamarin stopt niet altijd bij een fout melding
+                }
+            }
+        }
+
+        public static async Task<List<TrelloList>> GetTrelloListAsync(string boardId)
+        {
+            string url = $"{_TRELLOBASEURL}/boards/{boardId}/lists?key={_TRELLOAPIKEY}&token={_TRELLOUSERTOKEN}";
+            using (HttpClient client = GetHttpClient())
+            {
+                try
+                {
+                    string json = await client.GetStringAsync(url);
+                    List<TrelloList> list = JsonConvert.DeserializeObject<List<TrelloList>>(json);
+                    return list;
+                }
+                catch (Exception ex)
+                {
+                    throw ex; //altijd breakpoint bij een catch --> xamarin stopt niet altijd bij een fout melding
+                }
+            }
+        }
+
+        public static async Task<List<TrelloCard>> GetTrelloCardAsync(string ListId)
+        {
+            string url = $"{_TRELLOBASEURL}/list/{ListId}/cards?key={_TRELLOAPIKEY}&token={_TRELLOUSERTOKEN}";
+            using (HttpClient client = GetHttpClient())
+            {
+                try
+                {
+                    string json = await client.GetStringAsync(url);
+                    List<TrelloCard> list = JsonConvert.DeserializeObject<List<TrelloCard>>(json);
+                    return list;
+                }
+                catch (Exception ex)
+                {
+                    throw ex; //altijd breakpoint bij een catch --> xamarin stopt niet altijd bij een fout melding
+                }
             }
         }
 
