@@ -36,7 +36,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Button Text="Edit list" BackgroundColor="#800080" TextColor="#fff" FontSize="Medium" FontAttributes="Bold" Margin="1">
+            <Button x:Name="btnAdd" Text="ADD" BackgroundColor="#800080" TextColor="#fff" FontSize="Medium"  Margin="1" >
                 <Button.Resources>
                     <Style TargetType="Button">
                         <Setter Property="CornerRadius" Value="30"/>

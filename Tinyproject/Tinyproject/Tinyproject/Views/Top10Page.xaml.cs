@@ -15,16 +15,17 @@ namespace Tinyproject.Views
     public partial class Top10Page : ContentPage
     {
         private static Random _rnd = new Random();
+        private string usedlist = "";
         public Top10Page()
         {
             InitializeComponent();
             // TestStockRepository();
             loadData();
 
-            
+            // btn clicked
+            btnAdd.Clicked += BtnAdd_Clicked;
 
         }
-
 
         private async Task TestStockRepository()
         {
@@ -58,6 +59,7 @@ namespace Tinyproject.Views
             //2. trelloList
             List<TrelloList> trelloLists = await StockRepositories.GetTrelloListAsync(selectedboard.BoardId);
             TrelloList selectedList = trelloLists[_rnd.Next(trelloLists.Count)];
+            usedlist = selectedList.ListId;
 
             //3. trelloCard
             List<TrelloCard> trellocards = await StockRepositories.GetTrelloCardAsync(selectedList.ListId);
@@ -73,5 +75,12 @@ namespace Tinyproject.Views
             var selectedCompany = (TrelloCard)lvwtop10.SelectedItem;
             Navigation.PushAsync(new InfoSelectionPage(selectedCompany.Ticker, selectedCompany.Name));
         }
+
+        private void BtnAdd_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new AddPage(usedlist));
+        }
+
+
     }
 }

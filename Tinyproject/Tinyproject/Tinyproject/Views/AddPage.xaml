@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Tinyproject.Views.AddPage">
+    <ContentPage.Content>
+        <StackLayout Margin="16" Spacing="0" Orientation="Vertical" VerticalOptions="Center">
+            <Label FontAttributes="Bold" Text="Adding stocks" FontSize="Medium" TextColor="Black" />
+            <Frame BackgroundColor="#F5E1FD" OutlineColor="#800080" Margin="2,16" Padding="16,0">
+                <StackLayout Spacing="0">
+                    <Grid RowSpacing="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Name" FontAttributes="Bold" TextColor="Black" VerticalOptions="Center" />
+                        <Entry x:Name="entName"  TextColor="Black" Grid.Column="1" />
+                    </Grid>
+                    <Grid RowSpacing="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Ticker symbol" FontAttributes="Bold" TextColor="Black" VerticalOptions="Center" />
+                        <Entry x:Name="entTicker"  TextColor="Black" Grid.Column="1" />
+                    </Grid>
+                </StackLayout>
+            </Frame>
+            <Button x:Name="btnAdd" Text="ADD" TextColor="White" BackgroundColor="#800080" Margin="0" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
