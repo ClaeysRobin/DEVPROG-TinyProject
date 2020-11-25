@@ -176,5 +176,29 @@ namespace Tinyproject.Repositories
             }
         }
 
+        public static async Task DeleteCardAsync(TrelloCard card)
+        {
+            string url = $"{_TRELLOBASEURL}/cards/{card.CardId}?key={_TRELLOAPIKEY}&token={_TRELLOUSERTOKEN}";
+            using (HttpClient client = GetHttpClient())
+            {
+                try
+                {
+                    //creer een json object van de card
+                    string json = JsonConvert.SerializeObject(card);
+                    StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+                    var response = await client.PutAsync(url, content);
+                    if (!response.IsSuccessStatusCode)
+                    {
+                        string errorMsg = $"Unsuccesful PUT to url: {url}, object: {json}";
+                        throw new Exception(errorMsg);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw ex; //altijd breakpoint bij een catch --> xamarin stopt niet altijd bij een fout melding
+                }
+            }
+        }
+
     }
 }

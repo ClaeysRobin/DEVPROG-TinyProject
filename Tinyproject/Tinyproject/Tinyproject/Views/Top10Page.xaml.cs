@@ -67,13 +67,19 @@ namespace Tinyproject.Views
 
             
             lvwtop10.ItemsSource = trellocards;
+
+            //check list for max companies
+            if (trellocards.Count >= 10)
+            {
+                btnAdd.IsEnabled = false;
+            }
         }
 
         private void lvwtop10_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             // eerst object omzetten naar een trellocard object
             var selectedCompany = (TrelloCard)lvwtop10.SelectedItem;
-            Navigation.PushAsync(new InfoSelectionPage(selectedCompany.Ticker, selectedCompany.Name));
+            Navigation.PushAsync(new InfoSelectionPage(selectedCompany));
         }
 
         private void BtnAdd_Clicked(object sender, EventArgs e)

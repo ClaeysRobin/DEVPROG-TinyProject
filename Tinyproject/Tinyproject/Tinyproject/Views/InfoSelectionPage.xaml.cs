@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Tinyproject.Repositories;
+using Tinyproject.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Ex01.Models;
 
 namespace Tinyproject.Views
 {
@@ -13,16 +15,32 @@ namespace Tinyproject.Views
     public partial class InfoSelectionPage : ContentPage
     {
         private string Ticker, Name;
-        public InfoSelectionPage(string p_ticker, string p_name)
+        private TrelloCard SelectedCard;
+        public InfoSelectionPage(TrelloCard card)
         {
             InitializeComponent();
-            Ticker = p_ticker;
-            Name = p_name;
+            Ticker = card.Ticker;
+            Name = card.Name;
+            SelectedCard = card;
 
             //change title of page to selected company
             this.Title = Name;
             
             
+        }
+
+        private async Task deleteStock(TrelloCard card)
+        {
+            //5. DELTE trelloCard
+            card.IsClosed = true;
+            await StockRepositories.DeleteCardAsync(card);
+        }
+
+
+        private void ToolbarItem_Clicked(object sender, EventArgs e)
+        {
+            deleteStock(SelectedCard);
+            Navigation.PushAsync(new Top10Page());
         }
     }
 }

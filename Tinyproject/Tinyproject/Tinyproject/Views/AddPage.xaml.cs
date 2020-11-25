@@ -31,8 +31,7 @@ namespace Tinyproject.Views
         {
             TrelloCard newCard = new TrelloCard { Ticker = NewTicker, Name = NewName };
             await StockRepositories.AddCardAsync(ListId, newCard);
-            //TrelloCard searchCard = (StockRepositories.GetTrelloCardAsync(ListId)).Where(x => x.Name.Equals(NewName)).FirstOrDefault();
-            //bool cardAdded = (searchCard != null); // checken als de nieuwe kaart is toegevoegd
+            
         }
 
         private void BtnAdd_Clicked(object sender, EventArgs e)
