@@ -31,14 +31,18 @@
                                 <StackLayout Grid.Column="1" Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Start" Margin="0,0,16,0">
                                     <Label x:Name="lblName" Text="{Binding Name}" FontSize="Medium" HorizontalOptions="Center" TextColor="Black"/>
                                 </StackLayout>
-                                <!--<StackLayout Grid.Column="2" Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Start" Margin="0,0,16,0">
-                                    <Button Text="select" x:Name="btnselect" Clicked="btnselect_Clicked"/>
-                                </StackLayout>-->
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <Button Text="Edit list" BackgroundColor="#800080" TextColor="#fff" FontSize="Medium" FontAttributes="Bold" Margin="1">
+                <Button.Resources>
+                    <Style TargetType="Button">
+                        <Setter Property="CornerRadius" Value="30"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

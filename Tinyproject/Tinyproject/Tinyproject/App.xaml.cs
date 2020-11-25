@@ -3,6 +3,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Tinyproject.Views;
 
+
 namespace Tinyproject
 {
     public partial class App : Application
@@ -11,7 +12,9 @@ namespace Tinyproject
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Top10Page());            
+            MainPage = new NavigationPage(new Top10Page());
+         
+          
         }
 
         protected override void OnStart()

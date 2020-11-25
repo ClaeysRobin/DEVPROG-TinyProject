@@ -12,11 +12,15 @@ namespace Tinyproject.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class InfoSelectionPage : ContentPage
     {
-        private string name;
-        public InfoSelectionPage(string p_name)
+        private string Ticker, Name;
+        public InfoSelectionPage(string p_ticker, string p_name)
         {
             InitializeComponent();
-            name = p_name;
+            Ticker = p_ticker;
+            Name = p_name;
+
+            //change title of page to selected company
+            this.Title = Name;
             
             
         }

@@ -15,7 +15,6 @@ namespace Tinyproject.Views
     public partial class Top10Page : ContentPage
     {
         private static Random _rnd = new Random();
-        private string name = "";
         public Top10Page()
         {
             InitializeComponent();
@@ -71,8 +70,8 @@ namespace Tinyproject.Views
         private void lvwtop10_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             // eerst object omzetten naar een trellocard object
-            var select = (TrelloCard)lvwtop10.SelectedItem;
-            Navigation.PushAsync(new InfoSelectionPage(select.Ticker));
+            var selectedCompany = (TrelloCard)lvwtop10.SelectedItem;
+            Navigation.PushAsync(new InfoSelectionPage(selectedCompany.Ticker, selectedCompany.Name));
         }
     }
 }
