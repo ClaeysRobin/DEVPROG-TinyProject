@@ -72,6 +72,7 @@ namespace Tinyproject.Views
             if (trellocards.Count >= 10)
             {
                 btnAdd.IsEnabled = false;
+                btnAdd.Text = "Top 10 already full";
             }
         }
 

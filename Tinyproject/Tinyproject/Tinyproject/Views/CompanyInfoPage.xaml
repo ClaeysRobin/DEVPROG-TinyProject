@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Tinyproject.Views.CompanyInfoPage"
+             NavigationPage.HasBackButton="True">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="lvwCOmpanyInfo" HasUnevenRows="True">
+                <ListView.ItemTemplate >
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+                                <StackLayout Padding="0" VerticalOptions="Center" HorizontalOptions="Center">
+                                    <Label x:Name="lblName" Text="{Binding symbol}" FontSize="Medium" HorizontalOptions="Center" TextColor="Black"/>
+                                </StackLayout>
+                                
+                                <StackLayout Grid.Row="1" Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Start" Margin="0,0,16,0">
+                                    <Label x:Name="lblName2" Text="{Binding companyName}" FontSize="Medium" HorizontalOptions="Center" TextColor="Black"/>
+                                </StackLayout>
+
+                                <StackLayout Grid.Row="2" Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Start" Margin="0,0,16,0">
+                                    <Label x:Name="lblName3" Text="{Binding exchange}" FontSize="Medium" HorizontalOptions="Center" TextColor="Black"/>
+                                </StackLayout>
+
+                                <StackLayout Grid.Row="3" Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Start" Margin="0,0,16,0">
+                                    <Label x:Name="lblName4" Text="{Binding industry}" FontSize="Medium" HorizontalOptions="Center" TextColor="Black"/>
+                                </StackLayout>
+
+                                <StackLayout Grid.Row="4" Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Start" Margin="0,0,16,0">
+                                    <Label x:Name="lblName5" Text="{Binding website}" FontSize="Medium" HorizontalOptions="Center" TextColor="Black"/>
+                                </StackLayout>
+
+                                <StackLayout Grid.Row="5" Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Start" Margin="0,0,16,0">
+                                    <Label x:Name="lblName6" Text="{Binding description}" FontSize="Medium" HorizontalOptions="Center" TextColor="Black"/>
+                                </StackLayout>
+
+                                <StackLayout Grid.Row="6" Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Start" Margin="0,0,16,0">
+                                    <Label x:Name="lblName7" Text="{Binding CEO}" FontSize="Medium" HorizontalOptions="Center" TextColor="Black"/>
+                                </StackLayout>
+
+                                <StackLayout Grid.Row="7" Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Start" Margin="0,0,16,0">
+                                    <Label x:Name="lblName8" Text="{Binding employees}" FontSize="Medium" HorizontalOptions="Center" TextColor="Black"/>
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

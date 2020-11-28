@@ -25,7 +25,9 @@ namespace Tinyproject.Views
 
             //change title of page to selected company
             this.Title = Name;
-            
+
+            btnCompanyInfo.Clicked += BtnCompanyInfo_Clicked;
+            btnPriceInfo.Clicked += BtnPriceInfo_Clicked;
             
         }
 
@@ -41,6 +43,17 @@ namespace Tinyproject.Views
         {
             deleteStock(SelectedCard);
             Navigation.PushAsync(new Top10Page());
+        }
+
+
+        private void BtnPriceInfo_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new PriceInfoPage(Ticker));
+        }
+
+        private void BtnCompanyInfo_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new CompanyInfoPage(Ticker, Name));
         }
     }
 }

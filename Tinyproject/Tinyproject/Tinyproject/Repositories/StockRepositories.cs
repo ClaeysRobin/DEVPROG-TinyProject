@@ -27,9 +27,9 @@ namespace Tinyproject.Repositories
             return client;
         }
 
-        public static async Task<List<StockPrice>> GetCompanyStockPrice(string company)
+        public static async Task<List<StockPrice>> GetCompanyStockPrice(string companyticker)
         {
-            string url = $"{_BASEURL}/{company}/quote?token={_APIKEY}&filter=symbol,companyName,primaryExchange,latestTime,latestPrice,previousClose,isUSMarketOpen";
+            string url = $"{_BASEURL}/{companyticker}/quote?token={_APIKEY}&filter=symbol,companyName,primaryExchange,latestTime,latestPrice,previousClose,isUSMarketOpen";
             using (HttpClient client = GetHttpClient())
             {
                 try
@@ -50,10 +50,10 @@ namespace Tinyproject.Repositories
             }
         }
 
-        public static async Task<List<StockSalesOnDate>> GetStockSalesOnDate(string company, DateTime date)
+        public static async Task<List<StockSalesOnDate>> GetStockSalesOnDate(string companyticker, DateTime date)
         {
             string date2 = date.ToString("yyyyMMdd");
-            string url = $"{_BASEURL}/{company}/chart/date/{date2}?token=pk_7b3376184a694659bb2a89ee7781d00e&filter=date,label,high,low,average,volume,numberOfTrades,open,close";
+            string url = $"{_BASEURL}/{companyticker}/chart/date/{date2}?token=pk_7b3376184a694659bb2a89ee7781d00e&filter=date,label,high,low,average,volume,numberOfTrades,open,close";
 
             using (HttpClient client = GetHttpClient())
             {
@@ -75,9 +75,9 @@ namespace Tinyproject.Repositories
             }
         }
 
-        public static async Task<List<CompanyInfo>> GetCompanyInfo(string company)
+        public static async Task<List<CompanyInfo>> GetCompanyInfo(string companyticker)
         {
-            string url = $"{_BASEURL}/{company}/company?token={_APIKEY}&filter=symbol,companyName,exchange,industry,website,description,CEO,employees";
+            string url = $"{_BASEURL}/{companyticker}/company?token={_APIKEY}&filter=symbol,companyName,exchange,industry,website,description,CEO,employees";
             using (HttpClient client = GetHttpClient())
             {
                 try
