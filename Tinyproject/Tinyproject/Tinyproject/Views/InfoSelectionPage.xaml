@@ -12,8 +12,20 @@
             <Label FontAttributes="Bold" Text="What info would you like" FontSize="Medium" TextColor="Black" />
             <Frame BackgroundColor="#F5E1FD" OutlineColor="#800080" Margin="2,16" Padding="16,0">
                 <StackLayout Spacing="0">
-                    <Button x:Name="btnCompanyInfo" Text="Company Info" TextColor="White" BackgroundColor="#800080" Margin="10" />
-                    <Button x:Name="btnPriceInfo" Text="Price Info" TextColor="White" BackgroundColor="#800080" Margin="10" />
+                    <Button x:Name="btnCompanyInfo" Text="Company Info" TextColor="White" BackgroundColor="#800080" Margin="10">
+                        <Button.Resources>
+                            <Style TargetType="Button">
+                                <Setter Property="CornerRadius" Value="30"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button x:Name="btnPriceInfo" Text="Price Info" TextColor="White" BackgroundColor="#800080" Margin="10" >
+                        <Button.Resources>
+                            <Style TargetType="Button">
+                                <Setter Property="CornerRadius" Value="30"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
                 </StackLayout>
             </Frame>
             <!--<Button x:Name="btnAdd" Text="ADD" TextColor="White" BackgroundColor="#800080" Margin="0" />-->

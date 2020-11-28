@@ -4,23 +4,49 @@
              x:Class="Tinyproject.Views.PriceInfoPage">
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="lvwPriceInfo" HasUnevenRows="true" IsEnabled="False">
+            <ListView x:Name="lvwPriceInfo" HasUnevenRows="True" IsEnabled="False" Margin="5,5,5,0">
                 <ListView.ItemTemplate >
                     <DataTemplate>
                         <ViewCell>
-                            <Frame BackgroundColor="#F5E1FD" OutlineColor="#800080" Margin="2,16" Padding="16,0">
+                            <Frame BackgroundColor="#F5E1FD" OutlineColor="#800080" Margin="2" Padding="6,0">
                                 <StackLayout Spacing="0">
                                     <Label  Text="{Binding latestTime, StringFormat='Latest time: {0}'}" FontSize="Large" HorizontalOptions="Start" TextColor="Black"/>
                                     <Label  Text="{Binding latestPrice, StringFormat='Price: {0}'}" FontSize="Medium" HorizontalOptions="Start" TextColor="Black"/>
                                     <Label  Text="{Binding previousClose, StringFormat='Previous market close price: {0}'}" FontSize="Medium" HorizontalOptions="Start" TextColor="Black"/>
                                     <Label  Text="{Binding isUSMarketOpen, StringFormat='Market open: {0}'}" FontSize="Medium" HorizontalOptions="Start" TextColor="Black"/>
-                                    <Button x:Name="btnyesterdaytrades" Text="view trades made yesterday" TextColor="White" BackgroundColor="#800080" Margin="10" />
                                 </StackLayout>
                             </Frame>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            
+            <ListView x:Name="lvwhistorytrades" HasUnevenRows="true"  IsVisible="False" >
+                <ListView.ItemTemplate >
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame BackgroundColor="#F5E1FD" OutlineColor="#800080"  Margin="5">
+                                <StackLayout Spacing="0">
+                                    <Label  Text="{Binding label, StringFormat='Time: {0}'}" FontSize="Large" HorizontalOptions="Start" TextColor="Black"/>
+                                    <Label  Text="{Binding high, StringFormat='Highest price: {0}'}" FontSize="Medium" HorizontalOptions="Start" TextColor="Black"/>
+                                    <Label  Text="{Binding low, StringFormat='Lowest price: {0}'}" FontSize="Medium" HorizontalOptions="Start" TextColor="Black"/>
+                                    <Label  Text="{Binding average, StringFormat='Average price: {0}'}" FontSize="Medium" HorizontalOptions="Start" TextColor="Black"/>
+                                    <Label  Text="{Binding numberOfTrades, StringFormat='Number of Trades: {0}'}" FontSize="Medium" HorizontalOptions="Start" TextColor="Black"/>
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Button x:Name="btnHistory" Text="view trades made yesterday" TextColor="White" BackgroundColor="#800080" Margin="10">
+                <Button.Resources>
+                    <Style TargetType="Button">
+                        <Setter Property="CornerRadius" Value="30"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

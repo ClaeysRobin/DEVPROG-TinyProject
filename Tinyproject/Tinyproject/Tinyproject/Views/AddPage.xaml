@@ -25,7 +25,13 @@
                     </Grid>
                 </StackLayout>
             </Frame>
-            <Button x:Name="btnAdd" Text="ADD" TextColor="White" BackgroundColor="#800080" Margin="0" />
+            <Button x:Name="btnAdd" Text="ADD" TextColor="White" BackgroundColor="#800080" Margin="0">
+                <Button.Resources>
+                    <Style TargetType="Button">
+                        <Setter Property="CornerRadius" Value="30"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

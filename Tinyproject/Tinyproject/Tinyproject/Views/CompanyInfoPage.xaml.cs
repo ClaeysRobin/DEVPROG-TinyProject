@@ -25,6 +25,7 @@ namespace Tinyproject.Views
 
             loaddata();
 
+            
         }
 
         private async Task loaddata()

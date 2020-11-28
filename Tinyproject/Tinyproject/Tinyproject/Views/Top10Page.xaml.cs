@@ -43,10 +43,10 @@ namespace Tinyproject.Views
             TrelloCard selectedCard = trellocards[_rnd.Next(trellocards.Count)];
 
 
-            DateTime date = new DateTime(2020, 11, 20);
-            List<StockPrice> stockPrice = await StockRepositories.GetCompanyStockPrice(selectedCard.Ticker);
-            List<StockSalesOnDate> stockSales = await StockRepositories.GetStockSalesOnDate(selectedCard.Ticker, date);
-            List<CompanyInfo> companyInfo = await StockRepositories.GetCompanyInfo(selectedCard.Ticker);
+            //DateTime date = new DateTime(2020, 11, 20);
+            //List<StockPrice> stockPrice = await StockRepositories.GetCompanyStockPrice(selectedCard.Ticker);
+            //List<StockSalesOnDate> stockSales = await StockRepositories.GetStockSalesOnDate(selectedCard.Ticker, date);
+            //List<CompanyInfo> companyInfo = await StockRepositories.GetCompanyInfo(selectedCard.Ticker);
 
         }
 
