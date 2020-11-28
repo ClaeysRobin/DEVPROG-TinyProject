@@ -48,7 +48,7 @@ namespace Tinyproject.Views
 
         private void BtnPriceInfo_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new PriceInfoPage(Ticker));
+            Navigation.PushAsync(new PriceInfoPage(Ticker, Name));
         }
 
         private void BtnCompanyInfo_Clicked(object sender, EventArgs e)

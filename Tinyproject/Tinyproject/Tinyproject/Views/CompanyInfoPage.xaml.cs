@@ -21,6 +21,7 @@ namespace Tinyproject.Views
             Name = name;
 
             this.Title = Name;
+            
 
             loaddata();
 
@@ -29,7 +30,8 @@ namespace Tinyproject.Views
         private async Task loaddata()
         {
             List<CompanyInfo> companyInfo = await StockRepositories.GetCompanyInfo(Ticker);
-            lvwCOmpanyInfo.ItemsSource = companyInfo;
+            lvwCompanyInfo.ItemsSource = companyInfo;
+           
         }
     }
 }
