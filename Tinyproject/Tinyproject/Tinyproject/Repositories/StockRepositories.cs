@@ -83,7 +83,9 @@ namespace Tinyproject.Repositories
                 try
                 {
                     string json = await client.GetStringAsync(url);
+                    json = json.Replace("null", "0");
                     string js = "[" + json + "]";
+                   
 
                     if (js != null)
                     {

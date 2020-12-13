@@ -4,6 +4,14 @@
              x:Class="Tinyproject.Views.PriceInfoPage">
     <ContentPage.Content>
         <StackLayout>
+
+            <Frame x:Name="FrmWeekend" BackgroundColor="#F5E1FD" OutlineColor="#800080" Margin="2" Padding="6,0">
+                <StackLayout Spacing="0">
+                    <Label  Text="No Trades are made in the weekend" FontSize="Large" HorizontalOptions="Start" TextColor="Black"/>
+                </StackLayout>
+            </Frame>
+
+
             <ListView x:Name="lvwPriceInfo" HasUnevenRows="True" IsEnabled="False" Margin="5,5,5,0">
                 <ListView.ItemTemplate >
                     <DataTemplate>
